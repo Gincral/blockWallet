@@ -1,0 +1,18 @@
+.cardWidth {
+    width: 400px;
+    margin: auto;
+}
+
+@media only screen and (max-width: 900px) {
+    .cardWidth { width: 100%; }
+}
+
+.card{
+    background: rgba(0,0,0,0.3);
+    box-shadow: 0 8px 32px 0 rgba(39, 40, 43, 0.37);
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border-radius: 6px;
+    padding: 40px;
+}
+
