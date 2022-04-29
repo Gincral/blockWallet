@@ -1,20 +1,12 @@
-import React from 'react';
-import AppState from './context/background/AppState';
-import AccountInfo from './components/accountInfo';
-import Card from './components/card';
-import SendEth from './components/sendEth';
-import TransactionInfo from './components/transactionInfo';
-
+import AppState from './context/background/AppState'
+import Pages from './components/pages'
 const App = () => {
   return (
     <AppState>
-      <Card>
-        <AccountInfo/>
-        <SendEth/>
-        <TransactionInfo/>
-      </Card>
+        <Pages/>
     </AppState>
   );
 };
 
 export default App;
+
