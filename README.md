@@ -1,3 +1,6 @@
+yarn to install 
+yarn start-legacy or yarn start to run the app.
+
 Below are the third party library I used and why I use it.
 
 1. react-web3: I tought we are going to make live data at first, that why I made connect wallet function. I decided to keep it after knowing we using mocking data, I hope this doesnt matter :P.
