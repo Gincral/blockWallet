@@ -1,0 +1,26 @@
+.topbar{
+    border-bottom: rgba(255, 255, 255, 0.3) 1px solid;
+    padding-bottom: 20px;
+}
+.title{
+    position: absolute;
+    right: 40px;
+    top:40px;
+    font-size: 20px;
+    font-weight: 900;
+}
+.move_top{
+    position: relative;
+    top: -10px;
+}
+.left{
+    height: 30px;
+    width: 30px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap:20px;
+    padding-top: 20px;
+    border-top: rgba(255, 255, 255, 0.3) 1px solid;
+}

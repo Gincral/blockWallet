@@ -15,28 +15,28 @@ export default function Pages() {
     }
   }
   return (
-    <Parallax ref={parallax} pages={3} horizontal style={{ height: '100vh', maxWidth: '900px', width: '100%', margin: 'auto' }}>
-      <ParallaxLayer offset={0} speed={0.3} >
-        <Card>
-          <AccountInfo />
-          <EthBalance onClick={() => scroll(1)} />
-          <TransactionInfo />
-        </Card>
-      </ParallaxLayer>
-      <ParallaxLayer offset={1} speed={0.3}>
+    // <Parallax ref={parallax} pages={3} horizontal style={{ height: '100vh', maxWidth: '900px', width: '100%', margin: 'auto' }}>
+    //   <ParallaxLayer offset={0} speed={0.3} >
+    //     <Card>
+    //       <AccountInfo />
+    //       <EthBalance onClick={() => scroll(1)} />
+    //       <TransactionInfo />
+    //     </Card>
+    //   </ParallaxLayer>
+    //   <ParallaxLayer offset={1} speed={0.3}>
         <Card>
           <SendEth cancel={() => scroll(0)} next={() => scroll(2)} />
         </Card>
-      </ParallaxLayer>
-      <ParallaxLayer offset={2} speed={0.3}>
-        <Card>
-          ha
-        </Card>
-      </ParallaxLayer>
-      {/* <Page offset={0} gradient="pink"  />
-        <Page offset={1} gradient="teal" onClick={() => scroll(2)} />
-        <Page offset={2} gradient="tomato" onClick={() => scroll(0)} /> */}
-    </Parallax>
+    //   </ParallaxLayer>
+    //   <ParallaxLayer offset={2} speed={0.3}>
+    //     <Card>
+    //       ha
+    //     </Card>
+    //   </ParallaxLayer>
+    //   {/* <Page offset={0} gradient="pink"  />
+    //     <Page offset={1} gradient="teal" onClick={() => scroll(2)} />
+    //     <Page offset={2} gradient="tomato" onClick={() => scroll(0)} /> */}
+    // </Parallax>
 
   )
 }
