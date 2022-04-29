@@ -21,7 +21,7 @@ export default function TransactionInfo(props: any) {
         return formatedData;
     }
 
-    const data = formatData(state.transactions)
+    const data = formatData(state.transactions).reverse()
 
     return (
     <div className={styles.transaction_info}>
