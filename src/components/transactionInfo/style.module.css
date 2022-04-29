@@ -1,28 +1,47 @@
-.account {
-    cursor: pointer;
-    height: 50px;
-}
-.connect {
+.content {
     display: grid;
-    grid-template-columns: 80px auto;
+    grid-template-columns: 80px auto 150pX;
     font-size: 14px;
+    padding: 15px 0px;
 }
-.icon {
-    color: #111;
-    font-size: 35px;
-    font-weight: 900;
-    background-color: rgba(255, 255, 255, 0.8);
-    width: 50px;
-    height: 50px;
+.border_top {
+    border-top: rgba(255, 255, 255, 0.3) 1px solid;
+}
+.img {
+    height: 30px;
+    width: 30px;
+}
+
+.img_background {
+    background: transparent;
+    height: 30px;
+    width: 30px;
+    padding: 10px;
     border-radius: 50%;
-    text-align: center;
+    border: rgba(255, 255, 255, 0.3) 1px solid;
 }
-.accountName{
-    font-size: 20px;
+
+.subtitle {
+    font-size: 18px;
     font-weight: 600;
 }
-.disconnect {
-    padding: 14px;
-    text-align: center;
-    border: rgba(255, 255, 255, 0.8) 1px solid;
+
+.subsubtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.right {
+    width: 100%;
+    text-align: right;
+}
+
+.transaction_info {
+    margin-top: 30px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

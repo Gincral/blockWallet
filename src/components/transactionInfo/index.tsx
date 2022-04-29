@@ -1,30 +1,30 @@
 import styles from './style.module.css'
-import { useWeb3React } from '@web3-react/core'
-import { Injected } from './../../utils/connector'
+import TransactionCard from './transactionCard'
 
-function sliceAddress(address: any) {
-    if (address) {
-        return address.slice(0, 6) + '...' + address.slice(address.length - 4)
-    } else {
-        return ''
-    }
-}
 
 
 export default function TransactionInfo(props: any) {
-    const { activate, deactivate, account } = useWeb3React();
+    const data = {
+        sent: true,
+        date: '2021-02-056',
+        ethAmount: 496,
+        usdAmount: 3,
+    }
 
-    const connectWallet = () => { activate(Injected) }
-    const disconnectWallet = () => { deactivate() }
-    return (<div onClick={account ? disconnectWallet : connectWallet} className={styles.account}>
-        {account ? <div className={styles.connect}>
-                <div className={styles.icon}>N</div>
-                <div>
-                    <div className={styles.accountName}>Nina's Wallet</div>
-                    {sliceAddress(account)}
-                </div>
-        </div>
-            : <div className={styles.disconnect}>Click Here Connect to Metamask</div>}
+    const data2 = {
+        sent: false,
+        date: '2021-02-056',
+        ethAmount: 496,
+        usdAmount: 32143,
+    }
+    return (<div className={styles.transaction_info}>
+        <TransactionCard data={data} hideTopBar/>
+        <TransactionCard data={data2} />
+        <TransactionCard data={data} />
+        <TransactionCard data={data2} />
+        <TransactionCard data={data} />
+        <TransactionCard data={data2} />
+        <TransactionCard data={data} />
     </div>)
 }
 
