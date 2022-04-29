@@ -2,34 +2,34 @@ import styles from './style.module.css'
 import TransactionCard from './transactionCard'
 import AppContext from '../../context/background/AppContext';
 import { useContext, useEffect } from 'react';
+import { Transaction } from '../../services/TransactionsService';
+import defaults from '../../utils/constants';
 
 export default function TransactionInfo(props: any) {
     const { state } = useContext(AppContext);
-    useEffect(() => {
-        console.log(state)
-    }, [state])
-    
-    const data = {
-        sent: true,
-        date: '2021-02-056',
-        ethAmount: 496,
-        usdAmount: 3,
+
+    const formatData = (data: Array<Transaction>) => {
+        let formatedData: Array<any> = [];
+        data.forEach((element: Transaction) => {
+            formatedData.push({
+                sent: true,
+                date: element.date,
+                ethAmount: element.value,
+                usdAmount: defaults.ethPrice * element.value,
+            })
+        });
+        return formatedData;
     }
 
-    const data2 = {
-        sent: false,
-        date: '2021-02-056',
-        ethAmount: 496,
-        usdAmount: 32143,
-    }
-    return (<div className={styles.transaction_info}>
-        <TransactionCard data={data} hideTopBar />
-        <TransactionCard data={data2} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data2} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data2} />
-        <TransactionCard data={data} />
+    const data = formatData(state.transactions)
+
+    return (
+    <div className={styles.transaction_info}>
+        {data.map((element, index)=>(
+            <TransactionCard data={element} hideTopBar={index===0} />
+        ))}
+        
+   
     </div>)
 }
 

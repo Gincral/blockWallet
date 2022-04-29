@@ -18,9 +18,12 @@ const AppState = (props: any) => {
         id: index,
         to: element.recipient,
         from: defaults.publicAddress,
-        value: Number(element.amount) * defaults.ethPrice,
+        value: Number(element.amount),
         date: element.date
       })
+    })
+    transactionsService.getListOfTransactions().then((data)=>{
+      setState({transactions: data})
     })
   }, [])
 
