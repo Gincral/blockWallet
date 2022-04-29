@@ -26,7 +26,7 @@ export default function TransactionInfo(props: any) {
     return (
     <div className={styles.transaction_info}>
         {data.map((element, index)=>(
-            <TransactionCard data={element} hideTopBar={index===0} />
+            <TransactionCard data={element} hideTopBar={index===0} key={index}/>
         ))}
         
    

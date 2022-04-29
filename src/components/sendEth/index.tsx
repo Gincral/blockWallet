@@ -2,11 +2,29 @@ import styles from './style.module.css'
 import Button from '../button'
 import left from './left.svg'
 import Input from '../input'
-import { useState } from 'react'
-export default function SendEth(props: any) {
+import AppContext from '../../context/background/AppContext';
+import { useState, useContext } from 'react'
+import defaults from '../../utils/constants';
+import moment from 'moment'
 
+export default function SendEth(props: any) {
+    const { state, setState, addTransaction } = useContext(AppContext);
     const [address, setaddress] = useState('')
     const [amount, setamount] = useState('')
+    
+    const createTranscation = () => {
+        const newTransaction = {
+            id: state.transactions.length,
+            to: address,
+            from: defaults.publicAddress,
+            value: Number(amount),
+            date: moment(new Date()).format('DD-MM-YYYY hh:mm')
+        }
+        setState({transactions: state.transactions.concat(newTransaction)})
+        addTransaction(newTransaction)
+        props.next()
+        // 
+    }
     return (<div>
         <div className={styles.topbar}>
             <span style={{ cursor: 'pointer' }} onClick={props.cancel}>
@@ -22,7 +40,7 @@ export default function SendEth(props: any) {
 
         <div className={styles.grid}>
             <Button onClick={props.cancel}>Cancel</Button>
-            <Button fill onClick={props.next}>Next</Button>
+            <Button fill onClick={createTranscation}>Next</Button>
         </div>
     </div>)
 }

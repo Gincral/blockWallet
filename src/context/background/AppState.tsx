@@ -9,7 +9,6 @@ import defaults from '../../utils/constants';
 
 const AppState = (props: any) => {
   const [state, dispatch] = useReducer(AppReducer, initAppState);
-  const [loading, setLoading] = useState(false);
   const transactionsService = new TransactionsService(initAppState);
 
   useEffect(() => {
@@ -38,10 +37,7 @@ const AppState = (props: any) => {
 
   // TODO: Complete the addTransaction method
   const addTransaction = (transaction: Transaction) => {
-    setLoading(true)
-    transactionsService.addTransaction(transaction).then(() => {
-      setLoading(false)
-    }).catch(() => { setLoading(false) })
+    transactionsService.addTransaction(transaction)
   }
 
   return (

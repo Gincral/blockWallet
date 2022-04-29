@@ -36,6 +36,7 @@ export class TransactionsService extends BaseService<TransactionsServiceState> {
                 const transactionList = this.getState().transactions;
                 const state: TransactionsServiceState = { transactions: transactionList.concat(newTransaction)}
                 this.updateState(state)
+                resolve()
             }, 300);
         })
     }

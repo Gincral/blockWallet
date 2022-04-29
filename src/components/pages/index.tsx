@@ -25,7 +25,7 @@ export default function Pages() {
       </ParallaxLayer>
       <ParallaxLayer offset={1} speed={0.3}>
         <Card>
-          <SendEth cancel={() => scroll(0)} next={() => scroll(2)} />
+          <SendEth cancel={() => scroll(0)} next={() => scroll(0)} />
         </Card>
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={0.3}>
