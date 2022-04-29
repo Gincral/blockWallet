@@ -22,8 +22,8 @@ export class BaseStore<S> implements IStore<S> {
         return this._state
     }
 
-    public updateState(partialState: Partial<S>): void {
-        this._state = Object.assign({}, this._state, partialState)
+    public updateState(State: S): void {
+        this._state = State
     }
 
 }

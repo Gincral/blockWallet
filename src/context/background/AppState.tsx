@@ -1,13 +1,29 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import AppContext from './AppContext';
 import AppReducer from './AppReducer';
 import Actions from '../contextActions';
 import { IAppState, initAppState } from './IAppState'
-import { Transaction } from '../../services/TransactionsService';
+import { Transaction, TransactionsService } from '../../services/TransactionsService';
+import defaults from '../../utils/constants';
 
 
 const AppState = (props: any) => {
   const [state, dispatch] = useReducer(AppReducer, initAppState);
+  const [loading, setLoading] = useState(false);
+  const transactionsService = new TransactionsService(initAppState);
+
+  useEffect(() => {
+    Object.values(defaults.pastTransactions).forEach((element, index) => {
+      addTransaction({
+        id: index,
+        to: element.recipient,
+        from: defaults.publicAddress,
+        value: Number(element.amount) * defaults.ethPrice,
+        date: element.date
+      })
+    })
+  }, [])
+
 
   // Set app state
   const setState = (newState: IAppState) => {
@@ -19,7 +35,10 @@ const AppState = (props: any) => {
 
   // TODO: Complete the addTransaction method
   const addTransaction = (transaction: Transaction) => {
-
+    setLoading(true)
+    transactionsService.addTransaction(transaction).then(() => {
+      setLoading(false)
+    }).catch(() => { setLoading(false) })
   }
 
   return (
