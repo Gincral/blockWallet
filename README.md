@@ -1,22 +1,7 @@
-# Blank Wallet Code Challenge
+Below are the third party library I used and why I use it.
 
-React app with typescript template
+1. react-web3: I tought we are going to make live data at first, that why I made connect wallet function. I decided to keep it after knowing we using mocking data, I hope this doesnt matter :P.
+2. moment: I used it to format date.
+3. react/spring: I used to do show the scrolling animation since I get lazy to write it from scratch :c.
 
-## Task
-
-Build an app to send ether with the given user interface.
-
-    - Transactions must be stored and fetched making use of the TransactionsService addTransaction and getListOfTransactions methods
-    - Past transactions must be listed on the main page
-    - You would need to add an "amount to transfer" input field (not present in the image)
-    - Styling and layout do not have to be necessarily like the provided image
-
-## What will be evaluated?
-
-    - Interface and "pixel perfect" design will not be taken into account.
-    - Responsive design
-    - Architecture skills
-    - React skills
-
-## Reference layout
-![alt text](test-task-ui.png)
+Rest of the things you can see should all written by me that has no reference.
