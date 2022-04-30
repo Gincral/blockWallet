@@ -38,6 +38,7 @@ const AppState = (props: any) => {
   // TODO: Complete the addTransaction method
   const addTransaction = (transaction: Transaction) => {
     transactionsService.addTransaction(transaction)
+    setState({transactions: state.transactions.concat(transaction)})
   }
 
   return (

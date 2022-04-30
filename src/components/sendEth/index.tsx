@@ -20,10 +20,8 @@ export default function SendEth(props: any) {
             value: Number(amount),
             date: moment(new Date()).format('DD-MM-YYYY hh:mm')
         }
-        setState({transactions: state.transactions.concat(newTransaction)})
         addTransaction(newTransaction)
         props.next()
-        // 
     }
     return (<div>
         <div className={styles.topbar}>
